@@ -4,7 +4,9 @@ Template Name: Solutions
 */
 ?>
 <?php
-get_header(); ?>
+get_header(); 
+$solutions = get_field("solutions");
+?>
 
 <main class="clear">
       <div class="grid">
@@ -54,22 +56,21 @@ get_header(); ?>
                     </ul>
                   </nav>
                 </div>
-                <p class="lead-in">Lead in Copy Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lectus arcu, euismod bibendum sapien id, faucibus viverra purus. Nullam vel metus ipsum. Praesent neque arcu, commodo a eros eget, ultrices.</p>
+                <p class="lead-in"><?php echo get_post_field('post_content', $post->ID); ?></p>
                 <div class="silk-harmonica silk-harmonica--expanded silk-harmonica--solutions">
                   <header role="tab" class="silk-harmonica__header"> 
                     <h6>Challenge</h6>
-                    <h5> <span>Asset Tracking</span>
+                    <h5> <span><?php echo $solutions['challenge']['title']?></span>
                         <svg class="symbol symbol-chevron-down">
                           <use xlink:href="#chevron-down"></use>
                         </svg>
                     </h5>
-                    <figure><img src="<?php bloginfo('template_directory'); ?>./assets/images/drilling.jpg" alt="undefined">
+                    <figure><img src="<?php echo $solutions['challenge']['image']?>" alt="undefined">
                     </figure>
                   </header>
                   <article role="tabpanel" class="silk-harmonica__content"> 
                     <h2>Our Solution</h2>
-                    <h3>Header Lorem Ipsum dolor</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae ligula dolor. Praesent semper ipsum eleifend leo fringilla auctor. Nam commodo lacus vitae malesuada congue. Morbi vehicula mi quis felis congue, sit amet faucibus ipsum vehicula. Suspendisse fringilla, risus id vehicula venenatis, velit velit tristique nulla, id condimentum justo arcu nec orci.</p><a href="" class="button button--mini">Share</a>
+                    <?php echo $solutions['challenge']['description']?><a href="" class="button button--mini">Share</a>
                     <div class="solution__footer">
                       <h4><a href="">
                             <svg class="symbol symbol-plane">
@@ -79,18 +80,17 @@ get_header(); ?>
                   </article>
                   <header role="tab" class="silk-harmonica__header"> 
                     <h6>Industry</h6>
-                    <h5> <span>Healthcare</span>
+                    <h5> <span><?php echo $solutions['industry']['title']?></span>
                         <svg class="symbol symbol-chevron-down">
                           <use xlink:href="#chevron-down"></use>
                         </svg>
                     </h5>
-                    <figure><img src="<?php bloginfo('template_directory'); ?>./assets/images/surgery.jpg" alt="undefined">
+                    <figure><img src="<?php echo $solutions['industry']['image']?>" alt="undefined">
                     </figure>
                   </header>
                   <article role="tabpanel" class="silk-harmonica__content"> 
                     <h2>Our Solution</h2>
-                    <h3>Header Lorem Ipsum dolor</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae ligula dolor. Praesent semper ipsum eleifend leo fringilla auctor. Nam commodo lacus vitae malesuada congue. Morbi vehicula mi quis felis congue, sit amet faucibus ipsum vehicula. Suspendisse fringilla, risus id vehicula venenatis, velit velit tristique nulla, id condimentum justo arcu nec orci.</p><a href="" class="button button--mini">Share</a>
+                    <?php echo $solutions['industry']['description']?><a href="" class="button button--mini">Share</a>
                     <div class="solution__footer">
                       <h4><a href="">
                             <svg class="symbol symbol-plane">
@@ -100,18 +100,17 @@ get_header(); ?>
                   </article>
                   <header role="tab" class="silk-harmonica__header"> 
                     <h6>Environment</h6>
-                    <h5> <span>Healthcare-Grade</span>
+                    <h5> <span><?php echo $solutions['environment']['title']?></span>
                         <svg class="symbol symbol-chevron-down">
                           <use xlink:href="#chevron-down"></use>
                         </svg>
                     </h5>
-                    <figure><img src="<?php bloginfo('template_directory'); ?>./assets/images/room.jpg" alt="undefined">
+                    <figure><img src="<?php echo $solutions['environment']['image']?>" alt="undefined">
                     </figure>
                   </header>
                   <article role="tabpanel" class="silk-harmonica__content"> 
                     <h2>Our Solution</h2>
-                    <h3>Header Lorem Ipsum dolor</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae ligula dolor. Praesent semper ipsum eleifend leo fringilla auctor. Nam commodo lacus vitae malesuada congue. Morbi vehicula mi quis felis congue, sit amet faucibus ipsum vehicula. Suspendisse fringilla, risus id vehicula venenatis, velit velit tristique nulla, id condimentum justo arcu nec orci.</p><a href="" class="button button--mini">Share</a>
+                    <?php echo $solutions['environment']['description']?><a href="" class="button button--mini">Share</a>
                     <div class="solution__footer">
                       <h4><a href="">
                             <svg class="symbol symbol-plane">
@@ -121,18 +120,17 @@ get_header(); ?>
                   </article>
                   <header role="tab" class="silk-harmonica__header"> 
                     <h6>Experience</h6>
-                    <h5> <span>Beginner</span>
+                    <h5> <span><?php echo $solutions['experience']['title']?></span>
                         <svg class="symbol symbol-chevron-down">
                           <use xlink:href="#chevron-down"></use>
                         </svg>
                     </h5>
-                    <figure><img src="<?php bloginfo('template_directory'); ?>./assets/images/hands.jpg" alt="undefined">
+                    <figure><img src="<?php echo $solutions['experience']['image']?>" alt="undefined">
                     </figure>
                   </header>
                   <article role="tabpanel" class="silk-harmonica__content"> 
                     <h2>Our Solution</h2>
-                    <h3>Header Lorem Ipsum dolor</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae ligula dolor. Praesent semper ipsum eleifend leo fringilla auctor. Nam commodo lacus vitae malesuada congue. Morbi vehicula mi quis felis congue, sit amet faucibus ipsum vehicula. Suspendisse fringilla, risus id vehicula venenatis, velit velit tristique nulla, id condimentum justo arcu nec orci.</p><a href="" class="button button--mini">Share</a>
+                    <?php echo $solutions['experience']['description']?><a href="" class="button button--mini">Share</a>
                     <div class="solution__footer">
                       <h4><a href="">
                             <svg class="symbol symbol-plane">

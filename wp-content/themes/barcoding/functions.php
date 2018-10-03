@@ -594,3 +594,48 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
  * SVG icons functions and filters.
  */
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
+
+
+//Custom posts
+function create_post_type() {
+	register_post_type( 'partner',
+	  array(
+		'labels' => array(
+		  'name' => __( 'Partners' ),
+		  'singular_name' => __( 'Partner' )
+		),
+		'public' => true,
+		'has_archive' => true,
+		'publicly_queryable' => true,
+		'menu_position' => 5,
+		'supports' => array('title','editor', 'excerpt','thumbnail')
+	  )
+	);
+	register_post_type( 'event',
+	  array(
+		'labels' => array(
+		  'name' => __( 'Events' ),
+		  'singular_name' => __( 'Event' )
+		),
+		'public' => true,
+		'has_archive' => true,
+		'publicly_queryable' => true,
+		'menu_position' => 5,
+		'supports' => array('title','editor', 'excerpt','thumbnail')
+	  )
+	);
+	register_post_type( 'whitepaper',
+	  array(
+		'labels' => array(
+		  'name' => __( 'Whitepapers' ),
+		  'singular_name' => __( 'Whitepaper' )
+		),
+		'public' => true,
+		'has_archive' => true,
+		'publicly_queryable' => true,
+		'menu_position' => 5,
+		'supports' => array('title','editor', 'excerpt','thumbnail')
+	  )
+	);
+  }
+  add_action( 'init', 'create_post_type' );

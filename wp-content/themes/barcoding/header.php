@@ -48,7 +48,7 @@
 </svg><span>Client Login</span></a></li>
 </ul>
 </nav>
-<div class="scarf clear"><a href="" class="site__logo">Barcoding</a>
+<div class="scarf clear"><a href="<?php echo home_url()?>" class="site__logo">Barcoding</a>
 <button aria-hidden="true" class="drawer__trigger">Menu</button>
 <div class="silk-nav drawer">
 <div class="site-search">

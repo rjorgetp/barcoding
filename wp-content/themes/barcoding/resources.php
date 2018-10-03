@@ -8,47 +8,7 @@ get_header(); ?>
 
 <main class="clear">
       <div class="grid">
-        <div class="col-large-4 col-wooser-3 nav-tier-bubble">
-          <nav class="nav nav-tier">
-            <ul>
-              <li><a href="/">
-                    <svg class="symbol symbol-arrow-left">
-                      <use xlink:href="#arrow-left"></use>
-                    </svg><span>Back to parentPage</span></a></li>
-              <li><a href="/">2nd Level Page link</a></li>
-              <li><a href="/">2nd Level Page link</a></li>
-              <li><a href="/">2nd Level Page link</a></li>
-              <li><a href="/">2nd Level Page link</a></li>
-              <li><a href="/">2nd Level Page link</a></li>
-              <li><a href="/">2nd Level Page link</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="col-large-8 col-wooser-9">
-          <div class="main-content">
-            <div class="section">
-              <div class="compartment">
-                <div class="nav-tier-container">
-                  <button class="nav-tier-switch"> <span>Page Menu</span>
-                      <svg class="symbol symbol-chevron-down">
-                        <use xlink:href="#chevron-down"></use>
-                      </svg>
-                  </button>
-                  <nav class="nav nav-tier nav-tier--clone">
-                    <ul>
-                      <li><a href="/">
-                            <svg class="symbol symbol-arrow-left">
-                              <use xlink:href="#arrow-left"></use>
-                            </svg><span>Back to parentPage</span></a></li>
-                      <li><a href="/">2nd Level Page link</a></li>
-                      <li><a href="/">2nd Level Page link</a></li>
-                      <li><a href="/">2nd Level Page link</a></li>
-                      <li><a href="/">2nd Level Page link</a></li>
-                      <li><a href="/">2nd Level Page link</a></li>
-                      <li><a href="/">2nd Level Page link</a></li>
-                    </ul>
-                  </nav>
-                </div>
+        <?php get_sidebar()?>
                 <h1>Resource Library</h1>
                 <p class="lead-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lectus arcu, euismod bibendum sapien id, faucibus viverra purus. Nullam vel metus ipsum. Praesent neque arcu, commodo a eros eget, ultrices.</p>
                 <div class="filter">

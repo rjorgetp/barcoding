@@ -1,20 +1,5 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.2
- */
-
-?>
-		<footer class="site__footer">
-      <div class="lace clear"><a href="" class="site__logo">Barcoding</a>
+	<footer class="site__footer">
+      <div class="lace clear"><a href="<?php echo home_url()?>" class="site__logo">Barcoding</a>
         <nav class="nav nav-social">
           <ul>
             <li><a href="" target="_blank"><span class="bottle">
@@ -42,46 +27,47 @@
       </div>
       <div class="sole clear">
         <div class="tread">
+        <?php
+$menu_name = 'main_nav';
+//$locations = get_nav_menu_locations();
+//$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+$menu = wp_get_nav_menu_object( $menu_name );
+$menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
+?>
           <nav class="nav nav-secondary-main">
             <ul>
-              <li><a href="./solutions.html">Solutions</a>
-                <ul>
-                  <li><a href="/">Dropdown</a></li>
-                  <li><a href="/">Dropdown</a></li>
-                </ul>
-              </li>
-              <li><a href="./business-areas.html">Business Areas</a>
-                <ul>
-                  <li><a href="/">Dropdown</a></li>
-                  <li><a href="/">Dropdown</a></li>
-                </ul>
-              </li>
-              <li><a href="/">Services</a>
-                <ul>
-                  <li><a href="/">GoLive Services</a></li>
-                  <li><a href="/">StayLive Services</a></li>
-                  <li><a href="/">GoLive Services</a></li>
-                  <li><a href="/">StayLive Services</a></li>
-                </ul>
-              </li>
-              <li><a href="/">Technology</a>
-                <ul>
-                  <li><a href="/">Dropdown</a></li>
-                  <li><a href="/">Dropdown</a></li>
-                </ul>
-              </li>
-              <li><a href="./resources.html">Resources</a>
-                <ul>
-                  <li><a href="/">Dropdown</a></li>
-                  <li><a href="/">Dropdown</a></li>
-                </ul>
-              </li>
-              <li><a href="./about.html">About Us</a>
-                <ul>
-                  <li><a href="/">Dropdown</a></li>
-                  <li><a href="/">Dropdown</a></li>
-                </ul>
-              </li>
+              
+<?php
+$count = 0;
+$submenu = false;
+foreach( $menuitems as $item ):
+	$title = $item->title;
+	$link = $item->url;
+	
+	// item does not have a parent so menu_item_parent equals 0 (false)
+	if ( !$item->menu_item_parent ):
+		
+		$parent_id = $item->ID;
+		?>
+		<li><a href="<?php echo $link; ?>"><?php echo $title; ?></a>
+		<?php endif; ?>
+		<?php if ( $parent_id == $item->menu_item_parent ): ?>
+		<?php if ( !$submenu ): $submenu = true; ?>
+		<ul>
+		<?php endif; ?>
+		<li><a href="<?php echo $link; ?>"><?php echo $title; ?></a></li>
+		
+		<?php if ( $menuitems[ $count + 1 ]->menu_item_parent != $parent_id && $submenu ): ?>
+		</ul>
+		
+		<?php $submenu = false; endif; ?>
+		
+		<?php endif; ?>
+		<?php if ( $menuitems[ $count + 1 ]->menu_item_parent != $parent_id ): ?>
+		</li>                           
+		<?php $submenu = false; endif; ?>
+		
+		<?php $count++; endforeach; ?>
             </ul>
           </nav>
         </div>

@@ -1,10 +1,4 @@
-<?php
-/*
-Template Name: Partner
-*/
-?>
-<?php
-get_header(); ?>
+<?php get_header(); ?>
 
 <main class="clear">
       <div class="grid">
